@@ -34,17 +34,24 @@ Uses the [Job DSL Plugin](https://wiki.jenkins-ci.org/display/JENKINS/Job+DSL+Pl
 [Gradle](https://gradle.org/install/)
 [Docker](https://store.docker.com/editions/community/docker-ce-desktop-mac)
 
-- Verify is you have Docker hub account just in case if you want to push the image created, then
+- Verify is you have Docker hub account just in case if you want to push the image created, then do a
   `docker login `
   Also you will need to create a repository in Docker hub to push you docker image there, the docker repository has to be the same name specified at [gradle.properties](https://github.com/binario200/jenkins-job-dsl/blob/3613c24cad14fb786251d83a03015c6e0a930f52/gradle.properties#L1), the same case for the image tag, that will be taken from the version gradle property value.
 
 - Build the image, run the container and if you want publish to the docker hub using Gradle
-  `./gradlew dockerBuild`
-  `./gradlew dockerRun` Build the docker image locally and start Jenkins at http://localhost:8080/
-  `./gradlew dockerStop`
-
-  if you want to publish do `docker login`
-  `./gradlew dockerPush # will push version tagged docker image `
-  `./gradlew dockerPushLatest`
+  ```
+  ./gradlew dockerBuild
+  ./gradlew dockerRun # Build the docker image locally and start Jenkins at http://localhost:8080/
+  
+  ```
+  
+  if you want to publish do 
+  ``` 
+  docker login # first
+  
+  ./gradlew dockerPush # will push version tagged docker image 
+  ./gradlew dockerPushLatest
+  
+ ```
 
   
