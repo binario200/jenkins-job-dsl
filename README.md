@@ -52,6 +52,4 @@ Uses the [Job DSL Plugin](https://wiki.jenkins-ci.org/display/JENKINS/Job+DSL+Pl
   ./gradlew dockerPush # will push version tagged docker image 
   ./gradlew dockerPushLatest
   
- ```
-
-  
+  ```
